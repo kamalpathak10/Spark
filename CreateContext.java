@@ -23,6 +23,11 @@ public class CreateContext {
 		//Way two
 		SparkContext sc = spark.sparkContext();
 		JavaSparkContext jsc2 = JavaSparkContext.fromSparkContext(sc);
+		
+		//Way third Without spark session
+		SparkConf conf = new SparkConf().setAppName("MyApp").setMaster("Local");
+		JavaSparkContext jsc3 = new JavaSparkContext(conf);
+		
 		spark.stop();
 	}
 
