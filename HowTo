@@ -1,0 +1,42 @@
+Note: 
+1)The results are tested in local mode of spark execution.
+2)Java programming language is used.
+3)Code is written and tested on Java8.
+4)Spark Version is 2.3.1
+5)Windows 10 is used for development and execution of program.
+6)Reference input file and output folders are also present in zipped folder.
+
+Steps/Methods to run: 
+
+Q1) 
+a)Method1:  Using Spark-submit command
+
+-Using Local mode of Spark Execution.
+-The zipped folder contains executable jar file "Project-0.0.1-SNAPSHOT.jar".
+-Copy the jar file into your <SPARK_HOME>/bin directory.
+-Copy the sample "emp.txt" file into your <SPARK_HOME>/bin folder.
+-Open CMD prompt in your <SPARK_HOME>/bin folder.
+-Run the below command spark-submit command.
+->spark-submit --class "com.github.kamal.Assignment" --master local[*] Project-0.0.1-SNAPSHOT.jar
+
+Example as shown below:
+C:\Users\kamal\spark-2.3.1-bin-hadoop2.7\bin>spark-submit --class "com.github.kamal.Assignment" --master local[*] Project-0.0.1-SNAPSHOT.jar
+
+After execution:
+-This will create four folders in your current diectory i.e <SPARK_HOME>/bin.
+-"output.txt" folder contains the final output file.
+-"quarantine.txt" folder contains the error file. 
+-"schma" folder contains the schema to be used.
+-"staging.cleaned" folder contains the cleaned staging file.
+-To re-run : Delete the above created folder from the path.
+
+b) Method2: Run directly in Eclipse (Eclipse with Java 8 is required) - Local mode of execution
+
+-The zipped folder contains the Java source code(A Java Maven Project: "Project.rar").
+-Untar the Project "Project.rar".
+-Open the project in Eclipse. Use Java8 to build the project.
+-Run the project(Main class "com.github.kamal.Assignment") in eclipse directly.
+
+-This will create the output folders as mentioned above in "home" directory of the eclipse project.
+-Sample employee file i.e ("emp.txt") need to be kept in the project home directory.
+-To re-run the project - This will require the previous output folder's to be deleted from project home folder manually.
